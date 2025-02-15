@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/allContaint.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Organic fruits and vegetables</title>
+</head>
+<body>
+    <nav class="navbar">
+        <article>
+            <img src="./Image/logo.jpg" alt="" style="height: 80px; width: auto">
+           
+            <div class="location">
+              <a href="https://www.google.com/maps">
+                <i class="fa-solid fa-location-dot"></i>
+            </a>
+                <marquee behavior="scroll" direction="left"  scrollamount="3" > Find the Store</marquee>
+            </div>
+
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search Products...">
+            </div>
+
+            <div class="icons">
+              <i class="fa-solid fa-cart-shopping" onclick="toggleCart()"></i>
+              <span class="cart-count" id="cartCount">0</span>
+             <a href="./login.html">
+              <i class="fa-regular fa-circle-user"></i>
+             </a>
+          </div>
+          
+        </article>       
+    </nav>
+    <nav class="smallnav">
+        <a href="./index.html">Home</a>
+        <a href="./Vegetable.html">Fresh Vegetables</a>
+        <a href="./fruits.html">Fresh Fruits</a>
+        <a href="./dryfruits.html">Dry Fruits</a>
+    </nav>
+
+    <div class="button-div">
+      <button class="titlebutton">Fresh Fruits</button>
+    </div>
+
+
+     <!-- Cart Container -->
+ <div id="cartContainer" class="cart-container hidden">
+  <h3>Your Selected Products</h3>
+
+   <!-- Cart Table -->
+   <table class="cart-table">
+   
+    <tbody id="cartItems">
+        
+    </tbody>
+</table>
+
+  <div class="cart-footer">
+    <div class="left-total">
+      <p>Total: ₹<span id="totalPrice">0</span></p> 
+    </div>
+    <div class="right-button">
+      <button onclick="placeOrder()">Order</button> 
+      <button onclick="cancelCart()">Cancel</button> 
+    </div>
+</div>
+</div>
+    <!-- Frsh Fruits -->
+   
+   
+    <div class="mainCont">
+          <section class="mainSec">  
+
+            <div class="card">
+                <div class="discount-container">
+                  <div class="discount-label">14% OFF</div>
+                </div>
+                <div class="card-img-container">
+                  <img src="./Image/Apple.jpg" alt="Apple" class="card-img">
+                </div>
+                <div class="card-body">
+                 <h6 style="color: #333;">सफरचंद </h6>
+                  <h4 class="card-title">Apple</h4>
+                  <p class="quantity-info">1 Kg </p>
+                  <div class="price-and-button">
+                    <p class="card-price"> ₹130</p>
+                    <button class="add-to-cart" onclick="addToCart('Apple', 130,'./Image/Apple.jpg')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="card">
+                <div class="discount-container">
+                  <div class="discount-label">17% OFF</div>
+                </div>
+                <div class="card-img-container">
+                  <img src="./Image/Pineapple.jpg" alt="Pineapple" class="card-img">
+                </div>
+                <div class="card-body">
+                  <h6 style="color: #333;"> अननस</h6>
+                  <h4 class="card-title">Pineapple</h4>
+                  <p class="quantity-info">1 Piece </p>
+                  <div class="price-and-button">
+                    <p class="card-price">₹75</p>
+                    <button class="add-to-cart" onclick="addToCart('Pineapple', 75,'./Image/Pineapple.jpg')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="card">
+                <div class="discount-container">
+                  <div class="discount-label">28% OFF</div>
+                </div>
+                <div class="card-img-container">
+                  <img src="./Image/Papaya.jpg" alt="Papaya " class="card-img">
+                </div>
+                <div class="card-body">
+                  <h6 style="color: #333;"> पपई</h6>
+                  <h4 class="card-title">Papaya </h4>
+                  <p class="quantity-info">1 Piece </p>
+                  <div class="price-and-button">
+                    <p class="card-price">₹50</p>
+                    <button class="add-to-cart" onclick="addToCart('Papaya', 50,'./Image/Papaya.jpg')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="card">
+                <div class="discount-container">
+                  <div class="discount-label">15% OFF</div>
+                </div>
+                <div class="card-img-container">
+                  <img src="./Image/Orange.jpg" alt="Orange" class="card-img">
+                </div>
+                <div class="card-body">
+                  <h6 style="color: #333;">संत्री</h6>
+                  <h4 class="card-title">Orange</h4>
+                  <p class="quantity-info">1 Kg</p>
+                  <div class="price-and-button">
+                    <p class="card-price">₹42</p>
+                    <button class="add-to-cart" onclick="addToCart('Orange', 42,'./Image/Orange.jpg')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="card">
+                <div class="discount-container">
+                  <div class="discount-label">14% OFF</div>
+                </div>
+                <div class="card-img-container">
+                  <img src="./Image/Pomegranate.jpg" alt="Pomegranate" class="card-img">
+                </div>
+                <div class="card-body">
+                  <h6 style="color: #333;"> डाळिंब</h6>
+                  <h4 class="card-title">Pomegranate</h4>
+                  <p class="quantity-info">500 Gm </p>
+                  <div class="price-and-button">
+                    <p class="card-price">₹75</p>
+                    <button class="add-to-cart" onclick="addToCart('Pomegranate', 75,'./Image/Pomegranate.jpg')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+
+            
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">17% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/greengrapes.avif" alt="greengrapes" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">हिरवी द्राक्षे</h6>
+                <h4 class="card-title">Green Grapes</h4>
+                <p class="quantity-info">250 Gm</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹25</p>
+                  <button class="add-to-cart" onclick="addToCart('Green Grapes', 25,'./Image/greengrapes.avif')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">27% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/bananas.jpeg" alt="radish" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">केळी</h6>
+                <h4 class="card-title">Bananas</h4>
+                <p class="quantity-info">1 Kg</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹52</p>
+                  <button class="add-to-cart" onclick="addToCart('Bananas', 52,'./Image/bananas.jpeg')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">52% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/blackgrapes.jpg" alt="brinjal" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">काळी द्राक्षे</h6>
+                <h4 class="card-title">Black Grapes</h4>
+                <p class="quantity-info">250 Gm</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹15</p>
+                  <button class="add-to-cart" onclick="addToCart('Black Grapes', 15,'./Image/blackgrapes.jpg')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">17% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/mango.avif" alt="mangor" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">आंबा</h6>
+                <h4 class="card-title">Mango</h4>
+                <p class="quantity-info">1 Kg</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹98</p>
+                  <button class="add-to-cart" onclick="addToCart('Mango', 98,'./Image/mango.avif')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">18% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/custardApple.webp" alt="custardApple" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">सीताफळ</h6>
+                <h4 class="card-title">Custard Apple</h4>
+                <p class="quantity-info">1 Kg</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹85</p>
+                  <button class="add-to-cart" onclick="addToCart('Custard Apple', 85,'./Image/custardApple.webp')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">20% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/Chikkoo.jpg" alt="Chikkoo" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">चिकू</h6>
+                <h4 class="card-title">Chikkoo</h4>
+                <p class="quantity-info">1 Kg</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹69</p>
+                  <button class="add-to-cart" onclick="addToCart('Chikkoo', 69,'./Image/Chikkoo.jpg')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">20% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/guava.avif" alt="guava" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">पेरू</h6>
+                <h4 class="card-title">Guava</h4>
+                <p class="quantity-info">1 Kg</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹89</p>
+                  <button class="add-to-cart" onclick="addToCart('Guava', 89,'./Image/guava.avif')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">14% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/watermelon.avif" alt="watermelon" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">टरबूज</h6>
+                <h4 class="card-title">Watermelon</h4>
+                <p class="quantity-info">2 Kg</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹95</p>
+                  <button class="add-to-cart" onclick="addToCart('Watermelon', 95,'./Image/watermelon.avif')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">12% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/jackfruit.avif" alt="jackfruit" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">फणस</h6>
+                <h4 class="card-title">JackFruit</h4>
+                <p class="quantity-info">1 Kg</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹65</p>
+                  <button class="add-to-cart" onclick="addToCart('JackFruit', 65,'./Image/jackfruit.avif')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">14% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/coconut.jpg" alt="coconut" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;"> Coconut </h6>
+                <h4 class="card-title">नारळ</h4>
+                <p class="quantity-info">1 Piece</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹35</p>
+                  <button class="add-to-cart" onclick="addToCart('Coconut', 35,'./Image/coconut.jpg')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">14% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/dragonfruit.jpg" alt="dragon fruit" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">ड्रॅगन फळ</h6>
+                <h4 class="card-title">Dragon Fruit</h4>
+                <p class="quantity-info">250 Gm</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹79</p>
+                  <button class="add-to-cart" onclick="addToCart('Dragon Fruit', 79,'./Image/dragonfruit.jpg')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">18% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/strawberry.jpg" alt="strawberry" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;"> स्ट्रॉबेरी</h6>
+                <h4 class="card-title">Strawberry</h4>
+                <p class="quantity-info">200 Gm</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹190</p>
+                  <button class="add-to-cart"  onclick="addToCart('strawberry', 190,'./Image/strawberry.jpg')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">40% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/Kiwi.jpg" alt="ridge gourd" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">किवी</h6>
+                <h4 class="card-title">Kiwi</h4>
+                <p class="quantity-info">260 Gm</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹90</p>
+                  <button class="add-to-cart"onclick="addToCart('Kiwi', 90,'./Image/Kiwi.jpg')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="discount-container">
+                <div class="discount-label">15% OFF</div>
+              </div>
+              <div class="card-img-container">
+                <img src="./Image/avocado.jpg" alt="avocado" class="card-img">
+              </div>
+              <div class="card-body">
+                <h6 style="color: #333;">एवोकॅडो </h6>
+                <h4 class="card-title">Avocado</h4>
+                <p class="quantity-info">200 Gm</p>
+                <div class="price-and-button">
+                  <p class="card-price">₹91</p>
+                  <button class="add-to-cart" onclick="addToCart('Avocado', 91,'./Image/avocado.jpg')">Add to Cart</button>
+                </div>
+              </div>
+            </div>            
+            </section>
+      </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>Organic Orchard</h3>
+            <p>Eat Fresh, Live Healthy</p>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>Email: organicorchard.com</p>
+            <p>Phone: +91-12345-67890</p>
+          </div>
+          <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/login/" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/" aria-label="Instagram">
+                 <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://x.com/twitt_login?lang=en" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2024 Organic Orchard. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="style.js"></script>
+</body>
+</html>
