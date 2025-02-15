@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .registration-container {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        h2 {
+            font-size: 32px;
+            color: rgb(0, 109, 60);
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        p {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: rgb(0, 109, 60);
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group input:focus {
+            border-color: rgb(0, 109, 60);
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 128, 0, 0.5);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: rgb(0, 109, 60); /* Fresh Green */
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #388E3C;
+        }
+
+        p a {
+            color: rgb(0, 109, 60);
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        p a:hover {
+            color: #388E3C;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <div class="form-container">
+            <h2>Join the Organic Orchard</h2>
+            <p>Get the finest fruits and vegetables delivered to your door.</p>
+            <!-- Added id "registerForm" to the form tag -->
+            <form id="registerForm" action="#" method="post">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <p>Already a member? <a href="login.html">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Handle the registration process
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Create a user object
+            const user = {
+                name: name,
+                email: email,
+                password: password
+            };
+
+            alert('Registration successful!');
+            window.location.href = 'login.html'; // Redirect to login page
+        });
+    </script>
+</body>
+</html>
