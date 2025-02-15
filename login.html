@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F8F9FA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .login-container {
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 15px;
+            padding: 50px 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: rgb(0, 109, 60);
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: rgb(0, 109, 60);
+            box-shadow: 0 0 10px rgba(102, 187, 106, 0.5);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background-color: rgb(0, 109, 60);
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #388E3C;
+        }
+
+        p a {
+            color: rgb(0, 109, 60);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            color: #388E3C;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="form-container">
+            <h2>Login to Organic Orchard</h2>
+            <p>Login to explore healthy, fresh products!</p>
+            <!-- Added id="loginForm" to the form -->
+            <form id="loginForm" action="#" method="post">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p>New to us? <a href="register.html">Register here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Handle the login process
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if(email==='rutu@12gmail.com' && password==='1234'){
+                alert('Login Successfull');
+                window.location.href='index.html';
+            }else{
+                alert('Invalid email or password!')
+            }
+        });
+    </script>
+</body>
+</html>
